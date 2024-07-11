@@ -1,0 +1,132 @@
+<!--
+    Input:
+        device/qcom/pineapple/manifest_pineapple.xml
+        ./device/samsung/vendor_common/manifest_launched_with_U.xml
+        vendor/samsung/hal-server/converter/default/manifest.xml
+        vendor/samsung/system/security/skeymaster/common/configs/rkp_skeymint_v300_manifest.xml
+        vendor/samsung/system/security/skeymaster/common/configs/gatekeeper_aidl_manifest.xml
+        vendor/samsung/interfaces/tlc/payment/1.0/manifest.xml
+        vendor/samsung/interfaces/tlc/blockchain/1.0/manifest.xml
+        vendor/samsung/interfaces/audio/manifest.xml
+-->
+<manifest version="1.0" type="device" target-level="8">
+    <hal format="hidl">
+        <name>android.hardware.audio</name>
+        <transport>hwbinder</transport>
+        <fqname>@7.1::IDevicesFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.audio.effect</name>
+        <transport>hwbinder</transport>
+        <fqname>@7.0::IEffectsFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.bluetooth</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.1::IBluetoothHci/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.gatekeeper</name>
+        <fqname>IGatekeeper/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.media.omx</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IOmx/default</fqname>
+        <fqname>@1.0::IOmxStore/default</fqname>
+    </hal>
+    <hal format="aidl" override="true">
+        <name>android.hardware.security.keymint</name>
+        <version>3</version>
+        <fqname>IKeyMintDevice/default</fqname>
+        <fqname>IRemotelyProvisionedComponent/default</fqname>
+    </hal>
+    <hal format="aidl" override="true">
+        <name>android.hardware.security.secureclock</name>
+        <fqname>ISecureClock/default</fqname>
+    </hal>
+    <hal format="aidl" override="true">
+        <name>android.hardware.security.sharedsecret</name>
+        <fqname>ISharedSecret/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>com.qualcomm.qti.imscmservice</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.2::IImsCmService/qti.ims.connectionmanagerservice</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>com.qualcomm.qti.uceservice</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.3::IUceService/com.qualcomm.qti.uceservice</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.capabilityconfigstore</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::ICapabilityConfigStore/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.dsp</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IDspService/dspservice</fqname>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.factory</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.fm</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IFmHci/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.trustedui</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.1::ITrustedInput/default</fqname>
+        <fqname>@1.1::ITrustedInput/qtee-vm</fqname>
+        <fqname>@1.2::ITrustedUI/default</fqname>
+        <fqname>@1.2::ITrustedUI/qtee-vm</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.ims.callinfo</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IService/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.samsung.hardware.audio</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::ISehDevicesFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.samsung.hardware.bluetooth</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.0::ISehBluetooth/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.samsung.hardware.keymint</name>
+        <version>3</version>
+        <fqname>ISehKeyMintExtension/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.samsung.hardware.keymint</name>
+        <version>3</version>
+        <fqname>ISehKeyMintFactory/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.samsung.hardware.media.converter</name>
+        <fqname>ISehColorConverterStore/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.samsung.hardware.tlc.blockchain</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::ISehBlockchain/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.samsung.hardware.tlc.payment</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::ISehTlcPayment/default</fqname>
+    </hal>
+    <sepolicy>
+        <version>34.0</version>
+    </sepolicy>
+</manifest>

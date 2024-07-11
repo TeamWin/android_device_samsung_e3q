@@ -1,0 +1,15 @@
+on post-fs-data
+    mkdir /efs/dsms 0310 vendor_dsms vendor_dsms
+    chown vendor_dsms vendor_dsms /efs/dsms/recovery.log
+    chmod 0660 /efs/dsms/recovery.log
+    chown vendor_dsms vendor_dsms /efs/dsms/factory.log
+    chmod 0660 /efs/dsms/factory.log
+    restorecon_recursive /efs/dsms
+
+on post-fs-data && property:ro.boot.boot_recovery=0
+    mkdir /data/local/dsms 0110 vendor_dsms vendor_dsms
+    rm /data/local/dsms/preboot.log
+    write /data/local/dsms/preboot.log ""
+    chown vendor_dsms vendor_dsms /data/local/dsms/preboot.log
+    chmod 0660 /data/local/dsms/preboot.log
+    restorecon_recursive /data/local/dsms

@@ -1,0 +1,9 @@
+service dsmsd /system/bin/dsms
+	class core
+	user vendor_dsms
+	group vendor_dsms
+	disabled
+	oneshot
+
+on boot
+	start dsmsd

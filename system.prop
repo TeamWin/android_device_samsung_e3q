@@ -1,0 +1,5 @@
+ro.display.series=Samsung S24 Ultra
+ro.product.board=pineapple
+ro.board.platform=pineapple
+sys.usb.controller=a600000.dwc3
+ro.boot.dynamic_partitions=true
